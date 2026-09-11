@@ -33,5 +33,56 @@ public class JavaApplication4 {
             }
         }
         
+        //password 
         
+        while (true) {
+            System.out.println("Enter a password (at least 8 characyers; a capital letter, a number and a special character)");
+            String password = input.nextLine();
+            
+            if (obj.checkPasswordComplexity(password)){
+                System.out.println("Password successfully captured");
+                break;
+            }else {
+                System.out.println("Password is not correctly formatted; please ensure that the password contains at least eight characters, a capital letter, a number and a special character.");
+            }
+        }
+        
+        //cellphone 
+        
+        while (true) {
+            System.out.println("Enter your cell phone number (with international code, e.g. +27838968976)");
+            String cellNumber = input.nextLine();
+            
+            if (obj.checkCellPhoneNumber(cellNumber)) {
+                System.out.println("Cell phone number successfully added.");
+                break;
+            }else {
+                System.out.println("Cell phone number incorrectly formatted or does not contain international code.");
+            }
+        }
+        
+        //first and last name 
+        System.out.println("Enter your first name:");
+        String firstName = input.nextLine();
+        
+        System.out.println("Enter your last name");
+        String lastName = input.nextLine();
+        
+        //register 
+        String registerationMessage = obj.registerUser(lastName, lastName, lastName, firstName, lastName);
+        System.out.println(registerationMessage);
+        
+        //login 
+        System.out.println("Enter your username:");
+        String loginUsername = input.nextLine();
+        
+        System.out.println("Enter your password");
+        String loginPassword = input.nextLine();
+        
+        String loginStatusMessage = obj.returnLoginStatus(true);
+        System.out.println(loginStatusMessage);
+        
+        input.close();
+    }
+    
 }
